@@ -1,0 +1,11 @@
+# Tested on 12 Nov 2026, macOS arm64, Python 3.9.6, with
+# sentence-transformers 3.4.1, transformers 4.57.6, torch 2.8.0,
+# pypdf 5.9.0, and numpy 2.0.2. Those versions are also written into
+# eval/last_results.json by evaluate.py. The ranges below let pip
+# install on another machine; a different version can change the scores.
+sentence-transformers>=2.7,<4
+transformers>=4.36,<5
+pypdf>=4,<6
+numpy>=1.23,<3
+sentencepiece>=0.1.99
+protobuf>=3.20
