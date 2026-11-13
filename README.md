@@ -1,3 +1,9 @@
+# Group Members 
+Mihretab Esayas    ATE/7353/14
+Andualem Yaregal  ATE/9570/14
+Amanuel Belachew ATE/3350/15
+Befiker Gezahegn  ATE/6972/14
+
 # Documentation question answering (RAG)
 
 This project answers questions about a small set of documentation files.
