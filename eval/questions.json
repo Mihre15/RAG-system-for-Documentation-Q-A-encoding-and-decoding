@@ -1,0 +1,131 @@
+[
+  {
+    "id": "D1",
+    "group": "direct",
+    "answerable": true,
+    "question": "What pip command installs Northstar Notes?",
+    "expected_snippet": "pip install northstar-notes",
+    "why": "Direct wording from getting-started.md. Checks Markdown loading."
+  },
+  {
+    "id": "D2",
+    "group": "direct",
+    "answerable": true,
+    "question": "What command lists every note?",
+    "expected_snippet": "northstar list",
+    "why": "Direct wording from commands.md."
+  },
+  {
+    "id": "D3",
+    "group": "direct",
+    "answerable": true,
+    "question": "How is the output of northstar list sorted?",
+    "expected_snippet": "newest first",
+    "why": "Direct wording from a neighboring paragraph in commands.md."
+  },
+  {
+    "id": "D4",
+    "group": "direct",
+    "answerable": true,
+    "question": "Where are notebooks stored by default?",
+    "expected_snippet": "folder named Northstar",
+    "why": "Direct wording from storage.md."
+  },
+  {
+    "id": "D5",
+    "group": "direct",
+    "answerable": true,
+    "question": "Does Northstar Notes store notes in a database?",
+    "expected_snippet": "never stores notes in a database",
+    "why": "Direct wording from storage.md. The word database appears in both."
+  },
+  {
+    "id": "D6",
+    "group": "direct",
+    "answerable": true,
+    "question": "What is the maximum note body length?",
+    "expected_snippet": "20000 characters",
+    "why": "Direct wording from limits.html. Fails if HTML text is dropped."
+  },
+  {
+    "id": "D7",
+    "group": "direct",
+    "answerable": true,
+    "question": "What error is raised when a note is too long?",
+    "expected_snippet": "NOTE_TOO_LONG",
+    "why": "A rare token in limits.html. Checks that the HTML paragraph survived."
+  },
+  {
+    "id": "D8",
+    "group": "direct",
+    "answerable": true,
+    "question": "Does Northstar encrypt pack files?",
+    "expected_snippet": "does not encrypt the pack file",
+    "why": "Direct wording from backup.pdf. Fails if PDF text extraction fails."
+  },
+  {
+    "id": "P1",
+    "group": "paraphrase",
+    "answerable": true,
+    "question": "Can I attach an image to a note?",
+    "expected_snippet": "Attachments are not supported",
+    "why": "Mild paraphrase. The docs say attachments, not image. The stem attach is shared."
+  },
+  {
+    "id": "P2",
+    "group": "paraphrase",
+    "answerable": true,
+    "question": "How do I back up a notebook onto a USB stick?",
+    "expected_snippet": "USB drive",
+    "why": "The docs say USB drive and copy, not USB stick or back up. From backup.pdf."
+  },
+  {
+    "id": "P3",
+    "group": "paraphrase",
+    "answerable": true,
+    "question": "Which version of Python do I need before I can install this tool?",
+    "expected_snippet": "Python 3.10 or newer",
+    "why": "Asks for a version and calls the product a tool. The fact is in getting-started.md."
+  },
+  {
+    "id": "P4",
+    "group": "paraphrase",
+    "answerable": true,
+    "question": "Can I turn my notes into a web page?",
+    "expected_snippet": "Export to HTML is not available",
+    "why": "Hard paraphrase. The question does not say export or HTML. The fact is in limits.html."
+  },
+  {
+    "id": "U1",
+    "group": "unanswerable",
+    "answerable": false,
+    "question": "What is the monthly price of Northstar Notes?",
+    "expected_snippet": null,
+    "why": "Price is never stated. The system should say I don't know."
+  },
+  {
+    "id": "U2",
+    "group": "unanswerable",
+    "answerable": false,
+    "question": "Does Northstar Notes support video chat between classmates?",
+    "expected_snippet": null,
+    "why": "Video chat is never mentioned."
+  },
+  {
+    "id": "U3",
+    "group": "unanswerable",
+    "answerable": false,
+    "question": "Who founded Northstar Notes?",
+    "expected_snippet": null,
+    "why": "No people are named in the docs."
+  },
+  {
+    "id": "U4",
+    "group": "unanswerable",
+    "answerable": false,
+    "question": "What is the maximum photo upload size?",
+    "expected_snippet": null,
+    "forbidden_snippet": "3 megabytes",
+    "why": "The phrase 3 megabytes exists only inside a script tag in limits.html. A correct loader must not retrieve it, and the system should say I don't know."
+  }
+]

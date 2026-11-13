@@ -1,0 +1,834 @@
+{
+  "retrieval_only": false,
+  "versions": {
+    "python": "3.9.6",
+    "platform": "macOS-26.3.1-arm64-arm-64bit",
+    "numpy": "2.0.2",
+    "sentence_transformers": "3.4.1",
+    "pypdf": "5.9.0",
+    "torch": "2.8.0",
+    "transformers": "4.57.6"
+  },
+  "config": {
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "generation_model": "google/flan-t5-small",
+    "max_chars": 500,
+    "overlap": 80,
+    "min_block_chars": 40,
+    "top_k": 3,
+    "prompt_passages": 1,
+    "min_similarity": 0.5305415
+  },
+  "embedder_seconds": 10.68869675,
+  "generator_seconds": 2.1907485829999995,
+  "index_seconds": 0.05478316700000008,
+  "encoding_check": {
+    "left": "backup notes",
+    "right_same": "backup notes",
+    "right_unrelated": "photosynthesis in algae",
+    "identical_cosine": 1.0,
+    "unrelated_cosine": 0.02878684550523758,
+    "vector_dim": 384
+  },
+  "first_question_id": "D1",
+  "first_question_vector_first8": [
+    -0.0004020587948616594,
+    -0.01805073954164982,
+    -0.04573940858244896,
+    -0.06320519745349884,
+    -0.01934109255671501,
+    0.0628344789147377,
+    -0.06704121828079224,
+    -0.019111093133687973
+  ],
+  "chunks": {
+    "chunk_count": 16,
+    "chunk_chars_min": 60,
+    "chunk_chars_max": 265,
+    "chunk_chars_mean": 122.0,
+    "chunks_per_source": {
+      "docs/backup.pdf": 1,
+      "docs/commands.md": 4,
+      "docs/getting-started.md": 4,
+      "docs/limits.html": 3,
+      "docs/storage.md": 4
+    },
+    "decoy_in_index": false
+  },
+  "recommended_cutoff": 0.5305415,
+  "recommended_gate_successes": 13,
+  "recommended_gate_total": 16,
+  "summary": {
+    "n": 16,
+    "n_answerable": 12,
+    "n_unanswerable": 4,
+    "top_k": 3,
+    "cutoff": 0.5305415,
+    "hit_at_1": 11,
+    "hit_at_k": 11,
+    "hit_at_1_rate": 0.9166666666666666,
+    "hit_at_k_rate": 0.9166666666666666,
+    "by_group": {
+      "direct": {
+        "n": 8,
+        "hit_at_1": 8,
+        "hit_at_k": 8,
+        "hit_at_1_rate": 1.0,
+        "hit_at_k_rate": 1.0
+      },
+      "paraphrase": {
+        "n": 4,
+        "hit_at_1": 3,
+        "hit_at_k": 3,
+        "hit_at_1_rate": 0.75,
+        "hit_at_k_rate": 0.75
+      }
+    },
+    "gate_abstain_on_unanswerable": 3,
+    "gate_false_abstain_on_hits": 2,
+    "gate_successes": 13,
+    "system_abstain_on_unanswerable": 3,
+    "system_false_abstain_on_answerable": 3,
+    "system_answered_unanswerable": 1,
+    "ungated_model_abstain_on_unanswerable": 0,
+    "ungated_model_n": 4
+  },
+  "rows": [
+    {
+      "id": "D1",
+      "group": "direct",
+      "question": "What pip command installs Northstar Notes?",
+      "answerable": true,
+      "expected_snippet": "pip install northstar-notes",
+      "why": "Direct wording from getting-started.md. Checks Markdown loading.",
+      "top_score": 0.9034228920936584,
+      "top_source": "docs/getting-started.md",
+      "top_chunk_id": "docs/getting-started.md#1",
+      "retrieved": [
+        {
+          "rank": 1,
+          "score": 0.9034228920936584,
+          "chunk_id": "docs/getting-started.md#1",
+          "source": "docs/getting-started.md",
+          "text": "Install Northstar Notes with pip: pip install northstar-notes. The version described in this documentation is 2.4.1."
+        },
+        {
+          "rank": 2,
+          "score": 0.7877585887908936,
+          "chunk_id": "docs/getting-started.md#2",
+          "source": "docs/getting-started.md",
+          "text": "You need Python 3.10 or newer before you install Northstar Notes. Older Python versions are not supported."
+        },
+        {
+          "rank": 3,
+          "score": 0.6701685190200806,
+          "chunk_id": "docs/getting-started.md#0",
+          "source": "docs/getting-started.md",
+          "text": "# Getting started\n\nNorthstar Notes is a command-line notebook for course work. Each note is stored as its own plain text file."
+        }
+      ],
+      "hit_rank": 1,
+      "hit_at_1": true,
+      "hit_at_k": true,
+      "forbidden_in_top_k": false,
+      "seconds": 0.5776724170000005,
+      "abstained": false,
+      "answer_text": "pip install northstar-notes",
+      "generator_called": true,
+      "prompt_tokens": 74,
+      "passages_used": [
+        "docs/getting-started.md#1"
+      ]
+    },
+    {
+      "id": "D2",
+      "group": "direct",
+      "question": "What command lists every note?",
+      "answerable": true,
+      "expected_snippet": "northstar list",
+      "why": "Direct wording from commands.md.",
+      "top_score": 0.748731791973114,
+      "top_source": "docs/commands.md",
+      "top_chunk_id": "docs/commands.md#0",
+      "retrieved": [
+        {
+          "rank": 1,
+          "score": 0.748731791973114,
+          "chunk_id": "docs/commands.md#0",
+          "source": "docs/commands.md",
+          "text": "# Commands\n\nList every note in the current notebook with northstar list."
+        },
+        {
+          "rank": 2,
+          "score": 0.5981318950653076,
+          "chunk_id": "docs/getting-started.md#0",
+          "source": "docs/getting-started.md",
+          "text": "# Getting started\n\nNorthstar Notes is a command-line notebook for course work. Each note is stored as its own plain text file."
+        },
+        {
+          "rank": 3,
+          "score": 0.5593758821487427,
+          "chunk_id": "docs/commands.md#1",
+          "source": "docs/commands.md",
+          "text": "The list is sorted by the time the note was last modified, newest first."
+        }
+      ],
+      "hit_rank": 1,
+      "hit_at_1": true,
+      "hit_at_k": true,
+      "forbidden_in_top_k": false,
+      "seconds": 0.08286275000000032,
+      "abstained": false,
+      "answer_text": "# Commands",
+      "generator_called": true,
+      "prompt_tokens": 56,
+      "passages_used": [
+        "docs/commands.md#0"
+      ]
+    },
+    {
+      "id": "D3",
+      "group": "direct",
+      "question": "How is the output of northstar list sorted?",
+      "answerable": true,
+      "expected_snippet": "newest first",
+      "why": "Direct wording from a neighboring paragraph in commands.md.",
+      "top_score": 0.5453883409500122,
+      "top_source": "docs/commands.md",
+      "top_chunk_id": "docs/commands.md#1",
+      "retrieved": [
+        {
+          "rank": 1,
+          "score": 0.5453883409500122,
+          "chunk_id": "docs/commands.md#1",
+          "source": "docs/commands.md",
+          "text": "The list is sorted by the time the note was last modified, newest first."
+        },
+        {
+          "rank": 2,
+          "score": 0.3681364357471466,
+          "chunk_id": "docs/commands.md#0",
+          "source": "docs/commands.md",
+          "text": "# Commands\n\nList every note in the current notebook with northstar list."
+        },
+        {
+          "rank": 3,
+          "score": 0.3445990979671478,
+          "chunk_id": "docs/getting-started.md#0",
+          "source": "docs/getting-started.md",
+          "text": "# Getting started\n\nNorthstar Notes is a command-line notebook for course work. Each note is stored as its own plain text file."
+        }
+      ],
+      "hit_rank": 1,
+      "hit_at_1": true,
+      "hit_at_k": true,
+      "forbidden_in_top_k": false,
+      "seconds": 0.19407704199999998,
+      "abstained": false,
+      "answer_text": "by the time the note was last modified, newest first",
+      "generator_called": true,
+      "prompt_tokens": 64,
+      "passages_used": [
+        "docs/commands.md#1"
+      ]
+    },
+    {
+      "id": "D4",
+      "group": "direct",
+      "question": "Where are notebooks stored by default?",
+      "answerable": true,
+      "expected_snippet": "folder named Northstar",
+      "why": "Direct wording from storage.md.",
+      "top_score": 0.7256101965904236,
+      "top_source": "docs/storage.md",
+      "top_chunk_id": "docs/storage.md#0",
+      "retrieved": [
+        {
+          "rank": 1,
+          "score": 0.7256101965904236,
+          "chunk_id": "docs/storage.md#0",
+          "source": "docs/storage.md",
+          "text": "# Storage\n\nBy default, notebooks live in a folder named Northstar inside your home directory."
+        },
+        {
+          "rank": 2,
+          "score": 0.41760364174842834,
+          "chunk_id": "docs/getting-started.md#3",
+          "source": "docs/getting-started.md",
+          "text": "Create a notebook named lab-journal with northstar init lab-journal. That command creates a folder called lab-journal and a file named notebook.toml inside it."
+        },
+        {
+          "rank": 3,
+          "score": 0.38010504841804504,
+          "chunk_id": "docs/storage.md#2",
+          "source": "docs/storage.md",
+          "text": "Northstar never stores notes in a database. If you delete a .txt file from the notebook folder, the note is gone."
+        }
+      ],
+      "hit_rank": 1,
+      "hit_at_1": true,
+      "hit_at_k": true,
+      "forbidden_in_top_k": false,
+      "seconds": 0.11682604100000127,
+      "abstained": false,
+      "answer_text": "Northstar inside your home directory",
+      "generator_called": true,
+      "prompt_tokens": 63,
+      "passages_used": [
+        "docs/storage.md#0"
+      ]
+    },
+    {
+      "id": "D5",
+      "group": "direct",
+      "question": "Does Northstar Notes store notes in a database?",
+      "answerable": true,
+      "expected_snippet": "never stores notes in a database",
+      "why": "Direct wording from storage.md. The word database appears in both.",
+      "top_score": 0.8104605078697205,
+      "top_source": "docs/storage.md",
+      "top_chunk_id": "docs/storage.md#2",
+      "retrieved": [
+        {
+          "rank": 1,
+          "score": 0.8104605078697205,
+          "chunk_id": "docs/storage.md#2",
+          "source": "docs/storage.md",
+          "text": "Northstar never stores notes in a database. If you delete a .txt file from the notebook folder, the note is gone."
+        },
+        {
+          "rank": 2,
+          "score": 0.7291161417961121,
+          "chunk_id": "docs/getting-started.md#0",
+          "source": "docs/getting-started.md",
+          "text": "# Getting started\n\nNorthstar Notes is a command-line notebook for course work. Each note is stored as its own plain text file."
+        },
+        {
+          "rank": 3,
+          "score": 0.5841703414916992,
+          "chunk_id": "docs/getting-started.md#1",
+          "source": "docs/getting-started.md",
+          "text": "Install Northstar Notes with pip: pip install northstar-notes. The version described in this documentation is 2.4.1."
+        }
+      ],
+      "hit_rank": 1,
+      "hit_at_1": true,
+      "hit_at_k": true,
+      "forbidden_in_top_k": false,
+      "seconds": 0.062162375000001546,
+      "abstained": false,
+      "answer_text": "no",
+      "generator_called": true,
+      "prompt_tokens": 78,
+      "passages_used": [
+        "docs/storage.md#2"
+      ]
+    },
+    {
+      "id": "D6",
+      "group": "direct",
+      "question": "What is the maximum note body length?",
+      "answerable": true,
+      "expected_snippet": "20000 characters",
+      "why": "Direct wording from limits.html. Fails if HTML text is dropped.",
+      "top_score": 0.7814768552780151,
+      "top_source": "docs/limits.html",
+      "top_chunk_id": "docs/limits.html#0",
+      "retrieved": [
+        {
+          "rank": 1,
+          "score": 0.7814768552780151,
+          "chunk_id": "docs/limits.html#0",
+          "source": "docs/limits.html",
+          "text": "Limits\n\nNote size\n\nThe maximum note body is 20000 characters. Longer notes are rejected with the error NOTE_TOO_LONG."
+        },
+        {
+          "rank": 2,
+          "score": 0.4867766499519348,
+          "chunk_id": "docs/limits.html#1",
+          "source": "docs/limits.html",
+          "text": "Capacity\n\nA notebook may contain at most 500 notes. Creating another note after that fails."
+        },
+        {
+          "rank": 3,
+          "score": 0.3558429479598999,
+          "chunk_id": "docs/storage.md#3",
+          "source": "docs/storage.md",
+          "text": "Attachments are not supported. A note may contain only text."
+        }
+      ],
+      "hit_rank": 1,
+      "hit_at_1": true,
+      "hit_at_k": true,
+      "forbidden_in_top_k": false,
+      "seconds": 0.08896158300000145,
+      "abstained": false,
+      "answer_text": "20000 characters",
+      "generator_called": true,
+      "prompt_tokens": 72,
+      "passages_used": [
+        "docs/limits.html#0"
+      ]
+    },
+    {
+      "id": "D7",
+      "group": "direct",
+      "question": "What error is raised when a note is too long?",
+      "answerable": true,
+      "expected_snippet": "NOTE_TOO_LONG",
+      "why": "A rare token in limits.html. Checks that the HTML paragraph survived.",
+      "top_score": 0.7824465036392212,
+      "top_source": "docs/limits.html",
+      "top_chunk_id": "docs/limits.html#0",
+      "retrieved": [
+        {
+          "rank": 1,
+          "score": 0.7824465036392212,
+          "chunk_id": "docs/limits.html#0",
+          "source": "docs/limits.html",
+          "text": "Limits\n\nNote size\n\nThe maximum note body is 20000 characters. Longer notes are rejected with the error NOTE_TOO_LONG."
+        },
+        {
+          "rank": 2,
+          "score": 0.5254138708114624,
+          "chunk_id": "docs/limits.html#1",
+          "source": "docs/limits.html",
+          "text": "Capacity\n\nA notebook may contain at most 500 notes. Creating another note after that fails."
+        },
+        {
+          "rank": 3,
+          "score": 0.35004478693008423,
+          "chunk_id": "docs/storage.md#3",
+          "source": "docs/storage.md",
+          "text": "Attachments are not supported. A note may contain only text."
+        }
+      ],
+      "hit_rank": 1,
+      "hit_at_1": true,
+      "hit_at_k": true,
+      "forbidden_in_top_k": false,
+      "seconds": 0.0729898329999994,
+      "abstained": false,
+      "answer_text": "Note size",
+      "generator_called": true,
+      "prompt_tokens": 76,
+      "passages_used": [
+        "docs/limits.html#0"
+      ]
+    },
+    {
+      "id": "D8",
+      "group": "direct",
+      "question": "Does Northstar encrypt pack files?",
+      "answerable": true,
+      "expected_snippet": "does not encrypt the pack file",
+      "why": "Direct wording from backup.pdf. Fails if PDF text extraction fails.",
+      "top_score": 0.48825642466545105,
+      "top_source": "docs/backup.pdf",
+      "top_chunk_id": "docs/backup.pdf#0",
+      "retrieved": [
+        {
+          "rank": 1,
+          "score": 0.48825642466545105,
+          "chunk_id": "docs/backup.pdf#0",
+          "source": "docs/backup.pdf",
+          "text": "Automatic cloud backup is turned off by default.\nTo copy a notebook to a USB drive, run northstar pack backup.nsb.\nThe pack file is a zip archive of the note text files.\nNorthstar does not encrypt the pack file.\nRestore a pack file with northstar unpack backup.nsb."
+        },
+        {
+          "rank": 2,
+          "score": 0.3868322968482971,
+          "chunk_id": "docs/getting-started.md#0",
+          "source": "docs/getting-started.md",
+          "text": "# Getting started\n\nNorthstar Notes is a command-line notebook for course work. Each note is stored as its own plain text file."
+        },
+        {
+          "rank": 3,
+          "score": 0.37157535552978516,
+          "chunk_id": "docs/storage.md#0",
+          "source": "docs/storage.md",
+          "text": "# Storage\n\nBy default, notebooks live in a folder named Northstar inside your home directory."
+        }
+      ],
+      "hit_rank": 1,
+      "hit_at_1": true,
+      "hit_at_k": true,
+      "forbidden_in_top_k": false,
+      "seconds": 0.008901707999999786,
+      "abstained": true,
+      "answer_text": "I don't know.",
+      "generator_called": false,
+      "prompt_tokens": null,
+      "passages_used": []
+    },
+    {
+      "id": "P1",
+      "group": "paraphrase",
+      "question": "Can I attach an image to a note?",
+      "answerable": true,
+      "expected_snippet": "Attachments are not supported",
+      "why": "Mild paraphrase. The docs say attachments, not image. The stem attach is shared.",
+      "top_score": 0.6807301044464111,
+      "top_source": "docs/storage.md",
+      "top_chunk_id": "docs/storage.md#3",
+      "retrieved": [
+        {
+          "rank": 1,
+          "score": 0.6807301044464111,
+          "chunk_id": "docs/storage.md#3",
+          "source": "docs/storage.md",
+          "text": "Attachments are not supported. A note may contain only text."
+        },
+        {
+          "rank": 2,
+          "score": 0.36634188890457153,
+          "chunk_id": "docs/storage.md#2",
+          "source": "docs/storage.md",
+          "text": "Northstar never stores notes in a database. If you delete a .txt file from the notebook folder, the note is gone."
+        },
+        {
+          "rank": 3,
+          "score": 0.3359551727771759,
+          "chunk_id": "docs/limits.html#0",
+          "source": "docs/limits.html",
+          "text": "Limits\n\nNote size\n\nThe maximum note body is 20000 characters. Longer notes are rejected with the error NOTE_TOO_LONG."
+        }
+      ],
+      "hit_rank": 1,
+      "hit_at_1": true,
+      "hit_at_k": true,
+      "forbidden_in_top_k": false,
+      "seconds": 0.053950625000000585,
+      "abstained": false,
+      "answer_text": "No",
+      "generator_called": true,
+      "prompt_tokens": 58,
+      "passages_used": [
+        "docs/storage.md#3"
+      ]
+    },
+    {
+      "id": "P2",
+      "group": "paraphrase",
+      "question": "How do I back up a notebook onto a USB stick?",
+      "answerable": true,
+      "expected_snippet": "USB drive",
+      "why": "The docs say USB drive and copy, not USB stick or back up. From backup.pdf.",
+      "top_score": 0.5335469841957092,
+      "top_source": "docs/backup.pdf",
+      "top_chunk_id": "docs/backup.pdf#0",
+      "retrieved": [
+        {
+          "rank": 1,
+          "score": 0.5335469841957092,
+          "chunk_id": "docs/backup.pdf#0",
+          "source": "docs/backup.pdf",
+          "text": "Automatic cloud backup is turned off by default.\nTo copy a notebook to a USB drive, run northstar pack backup.nsb.\nThe pack file is a zip archive of the note text files.\nNorthstar does not encrypt the pack file.\nRestore a pack file with northstar unpack backup.nsb."
+        },
+        {
+          "rank": 2,
+          "score": 0.33124661445617676,
+          "chunk_id": "docs/storage.md#0",
+          "source": "docs/storage.md",
+          "text": "# Storage\n\nBy default, notebooks live in a folder named Northstar inside your home directory."
+        },
+        {
+          "rank": 3,
+          "score": 0.263755202293396,
+          "chunk_id": "docs/getting-started.md#3",
+          "source": "docs/getting-started.md",
+          "text": "Create a notebook named lab-journal with northstar init lab-journal. That command creates a folder called lab-journal and a file named notebook.toml inside it."
+        }
+      ],
+      "hit_rank": 1,
+      "hit_at_1": true,
+      "hit_at_k": true,
+      "forbidden_in_top_k": false,
+      "seconds": 0.3160369999999997,
+      "abstained": false,
+      "answer_text": "To copy a notebook to a USB drive, run northstar pack backup.nsb.",
+      "generator_called": true,
+      "prompt_tokens": 121,
+      "passages_used": [
+        "docs/backup.pdf#0"
+      ]
+    },
+    {
+      "id": "P3",
+      "group": "paraphrase",
+      "question": "Which version of Python do I need before I can install this tool?",
+      "answerable": true,
+      "expected_snippet": "Python 3.10 or newer",
+      "why": "Asks for a version and calls the product a tool. The fact is in getting-started.md.",
+      "top_score": 0.46416419744491577,
+      "top_source": "docs/getting-started.md",
+      "top_chunk_id": "docs/getting-started.md#2",
+      "retrieved": [
+        {
+          "rank": 1,
+          "score": 0.46416419744491577,
+          "chunk_id": "docs/getting-started.md#2",
+          "source": "docs/getting-started.md",
+          "text": "You need Python 3.10 or newer before you install Northstar Notes. Older Python versions are not supported."
+        },
+        {
+          "rank": 2,
+          "score": 0.3570595979690552,
+          "chunk_id": "docs/getting-started.md#1",
+          "source": "docs/getting-started.md",
+          "text": "Install Northstar Notes with pip: pip install northstar-notes. The version described in this documentation is 2.4.1."
+        },
+        {
+          "rank": 3,
+          "score": 0.1674995869398117,
+          "chunk_id": "docs/getting-started.md#3",
+          "source": "docs/getting-started.md",
+          "text": "Create a notebook named lab-journal with northstar init lab-journal. That command creates a folder called lab-journal and a file named notebook.toml inside it."
+        }
+      ],
+      "hit_rank": 1,
+      "hit_at_1": true,
+      "hit_at_k": true,
+      "forbidden_in_top_k": false,
+      "seconds": 0.009305291000000437,
+      "abstained": true,
+      "answer_text": "I don't know.",
+      "generator_called": false,
+      "prompt_tokens": null,
+      "passages_used": []
+    },
+    {
+      "id": "P4",
+      "group": "paraphrase",
+      "question": "Can I turn my notes into a web page?",
+      "answerable": true,
+      "expected_snippet": "Export to HTML is not available",
+      "why": "Hard paraphrase. The question does not say export or HTML. The fact is in limits.html.",
+      "top_score": 0.5128413438796997,
+      "top_source": "docs/getting-started.md",
+      "top_chunk_id": "docs/getting-started.md#0",
+      "retrieved": [
+        {
+          "rank": 1,
+          "score": 0.5128413438796997,
+          "chunk_id": "docs/getting-started.md#0",
+          "source": "docs/getting-started.md",
+          "text": "# Getting started\n\nNorthstar Notes is a command-line notebook for course work. Each note is stored as its own plain text file."
+        },
+        {
+          "rank": 2,
+          "score": 0.4168011546134949,
+          "chunk_id": "docs/storage.md#3",
+          "source": "docs/storage.md",
+          "text": "Attachments are not supported. A note may contain only text."
+        },
+        {
+          "rank": 3,
+          "score": 0.4033015966415405,
+          "chunk_id": "docs/storage.md#2",
+          "source": "docs/storage.md",
+          "text": "Northstar never stores notes in a database. If you delete a .txt file from the notebook folder, the note is gone."
+        }
+      ],
+      "hit_rank": null,
+      "hit_at_1": false,
+      "hit_at_k": false,
+      "forbidden_in_top_k": false,
+      "seconds": 0.008797000000001276,
+      "abstained": true,
+      "answer_text": "I don't know.",
+      "generator_called": false,
+      "prompt_tokens": null,
+      "passages_used": []
+    },
+    {
+      "id": "U1",
+      "group": "unanswerable",
+      "question": "What is the monthly price of Northstar Notes?",
+      "answerable": false,
+      "expected_snippet": null,
+      "why": "Price is never stated. The system should say I don't know.",
+      "top_score": 0.5275360345840454,
+      "top_source": "docs/getting-started.md",
+      "top_chunk_id": "docs/getting-started.md#0",
+      "retrieved": [
+        {
+          "rank": 1,
+          "score": 0.5275360345840454,
+          "chunk_id": "docs/getting-started.md#0",
+          "source": "docs/getting-started.md",
+          "text": "# Getting started\n\nNorthstar Notes is a command-line notebook for course work. Each note is stored as its own plain text file."
+        },
+        {
+          "rank": 2,
+          "score": 0.48845091462135315,
+          "chunk_id": "docs/getting-started.md#1",
+          "source": "docs/getting-started.md",
+          "text": "Install Northstar Notes with pip: pip install northstar-notes. The version described in this documentation is 2.4.1."
+        },
+        {
+          "rank": 3,
+          "score": 0.48000651597976685,
+          "chunk_id": "docs/getting-started.md#2",
+          "source": "docs/getting-started.md",
+          "text": "You need Python 3.10 or newer before you install Northstar Notes. Older Python versions are not supported."
+        }
+      ],
+      "hit_rank": null,
+      "hit_at_1": false,
+      "hit_at_k": false,
+      "forbidden_in_top_k": false,
+      "seconds": 0.07959970900000002,
+      "abstained": true,
+      "answer_text": "I don't know.",
+      "generator_called": false,
+      "prompt_tokens": null,
+      "passages_used": [],
+      "ungated_abstained": false,
+      "ungated_answer": "$9.00",
+      "ungated_generator_called": true
+    },
+    {
+      "id": "U2",
+      "group": "unanswerable",
+      "question": "Does Northstar Notes support video chat between classmates?",
+      "answerable": false,
+      "expected_snippet": null,
+      "why": "Video chat is never mentioned.",
+      "top_score": 0.48242464661598206,
+      "top_source": "docs/getting-started.md",
+      "top_chunk_id": "docs/getting-started.md#0",
+      "retrieved": [
+        {
+          "rank": 1,
+          "score": 0.48242464661598206,
+          "chunk_id": "docs/getting-started.md#0",
+          "source": "docs/getting-started.md",
+          "text": "# Getting started\n\nNorthstar Notes is a command-line notebook for course work. Each note is stored as its own plain text file."
+        },
+        {
+          "rank": 2,
+          "score": 0.44122031331062317,
+          "chunk_id": "docs/storage.md#2",
+          "source": "docs/storage.md",
+          "text": "Northstar never stores notes in a database. If you delete a .txt file from the notebook folder, the note is gone."
+        },
+        {
+          "rank": 3,
+          "score": 0.4391569495201111,
+          "chunk_id": "docs/getting-started.md#1",
+          "source": "docs/getting-started.md",
+          "text": "Install Northstar Notes with pip: pip install northstar-notes. The version described in this documentation is 2.4.1."
+        }
+      ],
+      "hit_rank": null,
+      "hit_at_1": false,
+      "hit_at_k": false,
+      "forbidden_in_top_k": false,
+      "seconds": 0.06764858300000043,
+      "abstained": true,
+      "answer_text": "I don't know.",
+      "generator_called": false,
+      "prompt_tokens": null,
+      "passages_used": [],
+      "ungated_abstained": false,
+      "ungated_answer": "no",
+      "ungated_generator_called": true
+    },
+    {
+      "id": "U3",
+      "group": "unanswerable",
+      "question": "Who founded Northstar Notes?",
+      "answerable": false,
+      "expected_snippet": null,
+      "why": "No people are named in the docs.",
+      "top_score": 0.6077969670295715,
+      "top_source": "docs/getting-started.md",
+      "top_chunk_id": "docs/getting-started.md#0",
+      "retrieved": [
+        {
+          "rank": 1,
+          "score": 0.6077969670295715,
+          "chunk_id": "docs/getting-started.md#0",
+          "source": "docs/getting-started.md",
+          "text": "# Getting started\n\nNorthstar Notes is a command-line notebook for course work. Each note is stored as its own plain text file."
+        },
+        {
+          "rank": 2,
+          "score": 0.5926562547683716,
+          "chunk_id": "docs/getting-started.md#1",
+          "source": "docs/getting-started.md",
+          "text": "Install Northstar Notes with pip: pip install northstar-notes. The version described in this documentation is 2.4.1."
+        },
+        {
+          "rank": 3,
+          "score": 0.5684529542922974,
+          "chunk_id": "docs/getting-started.md#2",
+          "source": "docs/getting-started.md",
+          "text": "You need Python 3.10 or newer before you install Northstar Notes. Older Python versions are not supported."
+        }
+      ],
+      "hit_rank": null,
+      "hit_at_1": false,
+      "hit_at_k": false,
+      "forbidden_in_top_k": false,
+      "seconds": 0.24128166600000078,
+      "abstained": false,
+      "answer_text": "a command-line notebook",
+      "generator_called": true,
+      "prompt_tokens": 72,
+      "passages_used": [
+        "docs/getting-started.md#0"
+      ],
+      "ungated_abstained": false,
+      "ungated_answer": "a command-line notebook",
+      "ungated_generator_called": true
+    },
+    {
+      "id": "U4",
+      "group": "unanswerable",
+      "question": "What is the maximum photo upload size?",
+      "answerable": false,
+      "expected_snippet": null,
+      "why": "The phrase 3 megabytes exists only inside a script tag in limits.html. A correct loader must not retrieve it, and the system should say I don't know.",
+      "top_score": 0.35784196853637695,
+      "top_source": "docs/limits.html",
+      "top_chunk_id": "docs/limits.html#0",
+      "retrieved": [
+        {
+          "rank": 1,
+          "score": 0.35784196853637695,
+          "chunk_id": "docs/limits.html#0",
+          "source": "docs/limits.html",
+          "text": "Limits\n\nNote size\n\nThe maximum note body is 20000 characters. Longer notes are rejected with the error NOTE_TOO_LONG."
+        },
+        {
+          "rank": 2,
+          "score": 0.2271023988723755,
+          "chunk_id": "docs/limits.html#1",
+          "source": "docs/limits.html",
+          "text": "Capacity\n\nA notebook may contain at most 500 notes. Creating another note after that fails."
+        },
+        {
+          "rank": 3,
+          "score": 0.1764897108078003,
+          "chunk_id": "docs/storage.md#3",
+          "source": "docs/storage.md",
+          "text": "Attachments are not supported. A note may contain only text."
+        }
+      ],
+      "hit_rank": null,
+      "hit_at_1": false,
+      "hit_at_k": false,
+      "forbidden_in_top_k": false,
+      "seconds": 0.09389545800000043,
+      "abstained": true,
+      "answer_text": "I don't know.",
+      "generator_called": false,
+      "prompt_tokens": null,
+      "passages_used": [],
+      "ungated_abstained": false,
+      "ungated_answer": "20000 characters",
+      "ungated_generator_called": true
+    }
+  ]
+}
