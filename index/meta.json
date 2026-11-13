@@ -1,0 +1,8 @@
+{
+  "chunk_count": 16,
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "fingerprint": "a20f777fff387cd9cc0fcc4d201e1d1451719b4dc9d53393a684badd6f98167b",
+  "max_chars": 500,
+  "min_block_chars": 40,
+  "overlap": 80
+}

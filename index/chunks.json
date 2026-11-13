@@ -1,0 +1,98 @@
+[
+  {
+    "chunk_id": "docs/backup.pdf#0",
+    "source": "docs/backup.pdf",
+    "index": 0,
+    "text": "Automatic cloud backup is turned off by default.\nTo copy a notebook to a USB drive, run northstar pack backup.nsb.\nThe pack file is a zip archive of the note text files.\nNorthstar does not encrypt the pack file.\nRestore a pack file with northstar unpack backup.nsb."
+  },
+  {
+    "chunk_id": "docs/commands.md#0",
+    "source": "docs/commands.md",
+    "index": 0,
+    "text": "# Commands\n\nList every note in the current notebook with northstar list."
+  },
+  {
+    "chunk_id": "docs/commands.md#1",
+    "source": "docs/commands.md",
+    "index": 1,
+    "text": "The list is sorted by the time the note was last modified, newest first."
+  },
+  {
+    "chunk_id": "docs/commands.md#2",
+    "source": "docs/commands.md",
+    "index": 2,
+    "text": "Add a note titled Week 3 with northstar add \"Week 3\". You will be prompted to type the body. Save the note by entering a line that contains only a period."
+  },
+  {
+    "chunk_id": "docs/commands.md#3",
+    "source": "docs/commands.md",
+    "index": 3,
+    "text": "Search note bodies with northstar search followed by a word, for example northstar search mitochondria. Search is case-insensitive and matches whole words only. It does not search titles."
+  },
+  {
+    "chunk_id": "docs/getting-started.md#0",
+    "source": "docs/getting-started.md",
+    "index": 0,
+    "text": "# Getting started\n\nNorthstar Notes is a command-line notebook for course work. Each note is stored as its own plain text file."
+  },
+  {
+    "chunk_id": "docs/getting-started.md#1",
+    "source": "docs/getting-started.md",
+    "index": 1,
+    "text": "Install Northstar Notes with pip: pip install northstar-notes. The version described in this documentation is 2.4.1."
+  },
+  {
+    "chunk_id": "docs/getting-started.md#2",
+    "source": "docs/getting-started.md",
+    "index": 2,
+    "text": "You need Python 3.10 or newer before you install Northstar Notes. Older Python versions are not supported."
+  },
+  {
+    "chunk_id": "docs/getting-started.md#3",
+    "source": "docs/getting-started.md",
+    "index": 3,
+    "text": "Create a notebook named lab-journal with northstar init lab-journal. That command creates a folder called lab-journal and a file named notebook.toml inside it."
+  },
+  {
+    "chunk_id": "docs/limits.html#0",
+    "source": "docs/limits.html",
+    "index": 0,
+    "text": "Limits\n\nNote size\n\nThe maximum note body is 20000 characters. Longer notes are rejected with the error NOTE_TOO_LONG."
+  },
+  {
+    "chunk_id": "docs/limits.html#1",
+    "source": "docs/limits.html",
+    "index": 1,
+    "text": "Capacity\n\nA notebook may contain at most 500 notes. Creating another note after that fails."
+  },
+  {
+    "chunk_id": "docs/limits.html#2",
+    "source": "docs/limits.html",
+    "index": 2,
+    "text": "Export\n\nExport to PDF with the command northstar export pdf. Export to HTML is not available."
+  },
+  {
+    "chunk_id": "docs/storage.md#0",
+    "source": "docs/storage.md",
+    "index": 0,
+    "text": "# Storage\n\nBy default, notebooks live in a folder named Northstar inside your home directory."
+  },
+  {
+    "chunk_id": "docs/storage.md#1",
+    "source": "docs/storage.md",
+    "index": 1,
+    "text": "Each note is a UTF-8 text file. The file name is the note title with spaces replaced by hyphens, followed by the .txt extension."
+  },
+  {
+    "chunk_id": "docs/storage.md#2",
+    "source": "docs/storage.md",
+    "index": 2,
+    "text": "Northstar never stores notes in a database. If you delete a .txt file from the notebook folder, the note is gone."
+  },
+  {
+    "chunk_id": "docs/storage.md#3",
+    "source": "docs/storage.md",
+    "index": 3,
+    "text": "Attachments are not supported. A note may contain only text."
+  }
+]
